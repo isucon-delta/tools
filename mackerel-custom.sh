@@ -18,7 +18,7 @@ command = '''
 '''
 EOS
 )
-echo $plugin_checks >> /etc/mackerel-agent/mackerel-agent.conf
+echo $plugin_checks | sudo tee -a /etc/mackerel-agent/mackerel-agent.conf
 
 ## mysqldの監視
 sudo mysql -u root -e \
@@ -32,7 +32,7 @@ mysql_metrics=$(cat << EOS
 command = "/usr/local/bin/mackerel-plugin-mysql -username=monitor_user"
 EOS
 )
-echo $mysql_metrics >> /etc/mackerel-agent/mackerel-agent.conf
+echo $mysql_metrics | sudo tee -a /etc/mackerel-agent/mackerel-agent.conf
 
 ### agentの再起動
 sudo /etc/init.d/mackerel-agent restart
