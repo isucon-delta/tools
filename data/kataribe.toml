@@ -45,13 +45,25 @@ duration_index = 10
 # You can aggregate requests by regular expression
 # For overview of regexp syntax: https://golang.org/pkg/regexp/syntax/
 [[bundle]]
-regexp = '^(GET|HEAD) /memo/[0-9]+\b'
-name = "get memo"
+regexp = '^POST /keyword/'
+name = "POST keyword"
 
 [[bundle]]
-regexp = '^(GET|HEAD) /stylesheets/'
-name = "stylesheets"
+regexp = '^(GET|HEAD) /keyword/'
+name = "GET keyword"
 
 [[bundle]]
-regexp = '^(GET|HEAD) /images/'
-name = "images"
+regexp = '^(GET|HEAD) /(\?page|\s)'
+name = "top"
+
+[[bundle]]
+regexp = '^(GET|HEAD) /img/'
+name = "img"
+
+[[bundle]]
+regexp = '^(GET|HEAD) /js/'
+name = "js"
+
+[[bundle]]
+regexp = '^(GET|HEAD) /css/'
+name = "css"
