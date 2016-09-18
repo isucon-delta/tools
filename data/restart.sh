@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /home/isucon/webapp
+sudo chown -R $(whoami) .
 git pull origin master
 
 if [ -f /var/lib/mysql/mysqld-slow.log ]; then
