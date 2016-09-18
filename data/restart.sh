@@ -10,6 +10,9 @@ if [ -f /var/log/nginx/access.log ]; then
     sudo mv /var/log/nginx/access.log /var/log/nginx/access.log.$(date "+%Y%m%d_%H%M%S")
 fi
 
+## delete xdebug log
+sudo rm /tmp/xdebug/*
+
 sudo cp nginx.conf /etc/nginx/nginx.conf
 sudo cp my.cnf /etc/mysql.cnf
 
