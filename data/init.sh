@@ -3,7 +3,7 @@
 cd $(dirname $0)
 
 # setup users
-for user in isucon fkarasaw mtaguchi tahatori
+for user in isucon fkarasaw mtaguchi hatotaka
 do
   sudo useradd $user -d /home/$user -s /bin/bash -p delta
   sudo mkdir -p /home/$user/.ssh
